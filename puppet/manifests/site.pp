@@ -6,28 +6,20 @@ package { "git":
   ensure => latest
 }
 
-node /rubystagingexample\d./ {
+node /staging\d./ {
   class { 'freaks::web':
-    gemset => 'staging',
-    app_name => 'staging'
+    gemset => 'apibugfreak',
+    app_name => 'apibugfreak'
   }
 }
 
 node /rubyproductionexample\d./ {
   class { 'freaks::web':
-    gemset => 'production',
-    app_name => 'production'
+    gemset => 'apibugfreak',
+    app_name => 'apibugfreak'
   }
 }
 
 node /^mongo\d.$/ {
   class { 'freaks::mongo': }
-}
-
-node /lb\d./ {
-  class { 'freaks::haproxy': }
-}
-
-node 'admin' {
-  class { 'freaks::admin': }
 }
