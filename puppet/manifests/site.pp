@@ -13,7 +13,7 @@ node /staging\d./ {
   }
 }
 
-node /rubyproductionexample\d./ {
+node /production\d./ {
   class { 'freaks::websecure':
     gemset => 'apibugfreak',
     app_name => 'apibugfreak'
